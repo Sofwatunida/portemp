@@ -242,7 +242,7 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 
      <article class="reveal d6 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
                 <br>
-        <img src="mypic/genre.jpg" alt="musik" loading="eager" class="w-48 h-64 object-cover rounded-2xl mx-auto">
+        <img src="mypic/genre.jpeg" alt="musik" loading="eager" class="w-48 h-64 object-cover rounded-2xl mx-auto">
         <h3 class="font-display font-bold text-xl text-white mb-3">Menikmati Musik</h3>
         <p class="text-sm text-zinc-400 leading-relaxed">Saya sangat menyukai musik dengan berbagai genre, mulai dari pop punk, balada, lagu Jawa, hingga lagu lawas karya Ebiet G. Ade, Rinto Harahap, dan Iwan Fals. Selain itu saya sangat juga suka nadzoman sunda</p>
       </article>
@@ -373,12 +373,13 @@ x-data="{ aktif: 'mokap' }">
        <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent"
 x-data="{ aktif: 'web' }">
 
-  <div class="pf w-full h-64 md:h-80">
+  <div class="pf w-full">
     <img
       :src="
         aktif === 'web' ? 'mypic/wpuu.png' :
         'mypic/wpuu.png'
       "
+      class="w-full object-contain"
       alt="Website kopi"
       loading="lazy"
     >
