@@ -95,17 +95,19 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased">
 
 <!-- ═══ NAV ═══ -->
+ <!-- fixed bikin navbarnya ttp di posisi walau di scroll,z-50 biar front in all -->
 <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
+      
   :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
 <!--max-w-6xl ngebatesin lebar max container  -->
     <a href="#hero" class="font-display font-bold text-xl tracking-tight relative z-10">
-      <span class="text-zinc-900 dark:text-white">Ncop</span><span class="text-accent">Star</span>
+      <span class="text-zinc-100 dark:text-white">Ncop</span><span class="text-accent">Star</span>
     </a>
 
     <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
       <li><a href="#services" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='services'?'on !text-zinc-900 dark:!text-white':''">Hobi</a></li>
-      <li><a href="#work"     class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Portofolio</a></li>
+      <li><a href="#work"     class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Projek</a></li>
       <li><a href="#about"   class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">Tentang</a></li>
       <li><a href="#blog"    class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='blog'?'on !text-zinc-900 dark:!text-white':''">Pengalaman</a></li>
       <li><a href="#contact" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">Kontak</a></li>
@@ -136,8 +138,8 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
     x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2"
     class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
     <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
-      <li><a href="#services" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Hobi</a></li>
-      <li><a href="#work"     @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Portofolio</a></li>
+      <li><a href="#services" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Minat</a></li>
+      <li><a href="#work"     @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Projek</a></li>
       <li><a href="#about"   @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Tentang</a></li>
       <li><a href="#blog"    @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Pengalaman</a></li>
       <li><a href="#contact" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">kontak</a></li>
@@ -164,11 +166,12 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
           Assalamu'alaikum! saya <span class="text-accent">Sofwatunida</span>
         </h1>
         <p class="reveal d2 text-lg md:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-relaxed max-w-md mb-10">
-          biasa dipanggil <strong class="font-medium text-zinc-700 dark:text-zinc-300">Soffel (SMP) dan Ncop (Pondok).</strong> Saya seorang Ceraunophile dan Nyctophile yang suka menikmati langit malam, gemericik air, kilatan petir, tiupan angin, serta suasana yang tenang dan sunyi.
+          biasa dipanggil <strong class="font-medium text-zinc-700 dark:text-zinc-300">Soffel (SMP) dan Ncop (Pondok).</strong>
+Saya menikmati musik, suasana yang tenang, dan percaya bahwa karya sederhana dapat memberikan manfaat bagi orang lain.
         </p>
         <div class="reveal d3 flex flex-wrap gap-4">
           <a href="#work" class="shimmer inline-flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors text-sm">
-            Lihat Portofolio
+            Lihat Projek
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </a>
           <a href="#contact" class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Kenali Lebih Dekat</a>
@@ -179,6 +182,7 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
           <div><p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">SMK</p><p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Pendidikan</p></div>
         </div>
       </div>
+    
 
       <div class="reveal d2 flex justify-center md:justify-end">
         <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
@@ -198,29 +202,29 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 <section id="services" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
   <div class="max-w-6xl mx-auto px-6">
     <div class="mb-14">
-      <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Hobi</p>
+      <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Minat</p>
       <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Bermain alat musik, menikmati musik, dan bermain game</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
 
       <article class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
         <!-- reveal=efek muncul pas di scroll -->
-         <img src="mypic/ukulele.jpg" alt="ukulele" loading="eager" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
+         <img src="mypic/ukulele.jpg" alt="ukulele" loading="lazy" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
                
         <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Ukulele</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Alat musik petik yang populer di Hawaii. Ukulele umumnya memiliki empat senar dan dimainkan dengan cara dipetik atau dikentrung. Saya biasanya menggunakan tuning GCEA. </p>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Ukulele merupakan alat musik yang paling saya sukai selain karena suaranya yang hangat dan sederhana, melalui ukulele, saya belajar mengiringi lagu sekaligus mengembangkan kreativitas dalam bermusik. </p>
       </article>
 
       <article class="reveal d2 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
-        <img src="mypic/kalimba.jpg" alt="kalimba" loading="eager" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
+        <img src="mypic/kalimba.jpg" alt="kalimba" loading="lazy" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
         <!-- max-w-6xl meh d tengah gmbar na -->
               
         <h3 class="font-display font-bold text-xl text-white mb-3">Kalimba</h3>
-        <p class="text-sm text-zinc-400 leading-relaxed">Menurut saya, memainkan kalimba terasa seperti memainkan piano versi mini karena menghasilkan suara yang lembut dan menenangkan.</p>
+        <p class="text-sm text-zinc-400 leading-relaxed">Kalimba menghadirkan alunan nada yang lembut dan menenangkan. Memainkannya menjadi cara saya menikmati waktu sekaligus menjaga fokus dan ketenangan.</p>
       </article>
 
       <article class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <img src="mypic/padus.JPG" alt="Padus" loading="eager" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
+        <img src="mypic/padus.JPG" alt="Padus" loading="lazy" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
              
         <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Paduan Suara</h3>
         <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Saya gemar bernyanyi, namun karena kurang percaya diri untuk tampil solo, saya lebih menyukai paduan suara karena melatih kekompakan, fokus, dan keserasian suara.</p>
@@ -230,22 +234,23 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
                
         <img src="mypic/rekorder1.jpg" alt="rekorder" loading="eager" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
         <h3 class="font-display font-bold text-xl text-white mb-3">Rekorder</h3>
-        <p class="text-sm text-zinc-400 leading-relaxed">Alat musik tiup yang bentuknya menyerupai suling, tetapi memiliki teknik permainan yang berbeda serta menghasilkan suara yang merdu.</p>
+        <p class="text-sm text-zinc-400 leading-relaxed">Rekorder menjadi salah satu alat musik yang membantu saya melatih ketelitian, penguasaan nada, serta konsistensi dalam berlatih.</p>
       </article>
 
       <article class="reveal d5 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
         <img src="mypic/bw.jpg" alt="kendang" loading="eager" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
         
         <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Bermain Game</h3>
-        <p class="text-sm text-zinc-400 leading-relaxed">Saya sangat suka dan sering memaikan game pixel, seperti PixelWorlds dan Breaworlds, selain itu saya juga memainkan game strategi seperti Mobile Legend dan Clash of Clans </p>
+        <p class="text-sm text-zinc-400 leading-relaxed">Bagi saya, bermain game bukan sekadar hiburan, tetapi juga menjadi media untuk melatih strategi, kreativitas, dan kemampuan beradaptasi. Saya menyukai game bergenre pixel maupun strategi, seperti Pixel Worlds, Mobile Legends, dan Clash of Clans.</p>
       </article>
 
      <article class="reveal d6 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
               
         <img src="mypic/genre.jpeg" alt="musik" loading="eager" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
         <h3 class="font-display font-bold text-xl text-white mb-3">Menikmati Musik</h3>
-        <p class="text-sm text-zinc-400 leading-relaxed">Saya sangat menyukai musik dengan berbagai genre, mulai dari pop punk, balada, lagu Jawa, hingga lagu lawas karya Ebiet G. Ade, Rinto Harahap, dan Iwan Fals. Selain itu saya sangat juga suka nadzoman sunda</p>
+        <p class="text-sm text-zinc-400 leading-relaxed">Saya menyukai musik dengan genre Pop Punk hingga Balada, selain sebagai hiburan, musik juga menjadi sumber inspirasi, sarana mengekspresikan diri, dan menemani proses belajar maupun berkarya.</p>
       </article>
+
     </div>
   </div>
 </section>
@@ -257,7 +262,7 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
   <div class="max-w-6xl mx-auto px-6">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
       <div>
-        <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Portofolio</p>
+        <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Projek</p>
         <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Projek</h2>
       </div>   
     </div>
@@ -308,7 +313,13 @@ x-data="{ aktif: 'traffic' }">
             : 'dark:bg-zinc-800 text-zinc-300'">Rancangan Projek</span>
       </button>
     </div>
-  <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Pembelajaran Internet of Things (IoT) menggunakan Arduino Uno dan Tinkercad sebagai media simulasi serta perancangan rangkaian. </p>
+  <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Proyek Internet of Things yang saya buat untuk mempelajari dasar-dasar penggunaan Arduino Uno, seperti menghubungkan komponen elektronik, membuat rangkaian sederhana, membaca data dari sensor, dan mengendalikan output melalui pemrograman.</p>
+  <p class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">Teknologi yang digunakan:</p>
+  <ul class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">
+    <li>Arduino Uno</li>
+    <li>Arduino IDE</li>
+    <li>Tinkercad</li>
+  </ul>
   </div>
       </article>
 
@@ -365,8 +376,14 @@ x-data="{ aktif: 'mokap' }">
             : 'dark:bg-zinc-800 text-zinc-300'">Poster Tema Bauhaus</span>
       </button>
     </div>
-  <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Pembelajaran desain grafis menggunakan Adobe Illustrator dan Adobe Photoshop untuk membuat berbagai karya visual. </p>
-  </div>
+  
+  <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Pembelajaran desain grafis membuat berbagai desain visual seperti poster, banner, dan media promosi digital dengan mengutamakan keseimbangan komposisi, warna, serta komunikasi visual yang efektif. </p>
+   <p class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">Teknologi yang digunakan:</p>
+  <ul class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">
+    <li>Adobe Illustrator</li>
+    <li>Adobe Photoshop</li>
+    
+</div>
       </article>
 
       <!-- web-->
@@ -395,7 +412,14 @@ x-data="{ aktif: 'web' }">
             : 'text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full'">Website Kopi</span>
       </button>
     </div>
-   <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Website portofolio pertama saya. Melalui proyek ini, saya belajar membuat website toko kopi sederhana dengan referensi dari channel Web Programming UNPAS.</p>
+   <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Website sederhana bertema kafe kopi yang saya kembangkan sebagai proyek awal dalam mempelajari pengembangan website. Proyek ini dibuat dengan mengikuti referensi dari chanel Web Programming UNPAS sebagai media belajar untuk memahami struktur HTML, styling CSS, dan interaktivitas menggunakan JavaScript.</p>
+     <p class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">Teknologi yang digunakan:</p>
+  <ul class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>Visual Studio Code</li>
+
   </div>
 </article>
 
@@ -424,7 +448,10 @@ x-data="{ aktif: 'web' }">
             : 'text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full'">3D Eskrim</span>
       </button>
     </div>
-   <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Membuat model 3D es krim sederhana menggunakan Blender sebagai latihan dasar pemodelan 3D. </p>
+   <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Model 3D sederhana berbentuk es krim yang saya buat sebagai latihan untuk mempelajari dasar-dasar pemodelan tiga dimensi menggunakan Blender. Proyek ini menjadi langkah awal saya dalam mengeksplorasi proses pembuatan objek 3D. </p>
+   <p class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">Teknologi yang digunakan:</p>
+  <ul class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">
+    <li>HTML</li>
   </div>
 </article>
  
@@ -446,7 +473,7 @@ x-data="{ aktif: 'web' }">
 
       <div class="order-1 md:order-2">
         <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Tentang Saya</p>
-        <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-6">Sedikit<br>tentang Ncop</h2>
+        <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-6">Sedikit<br>tentang saya</h2>
         <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Saya Sofwatunida, ditulis tanpa spasi.</p>
         <p class="reveal d3 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8">
           Saya merupakan anak pertama dari tiga bersaudara yang lahir di Puncak, Bogor, pada 8 Februari 2009. Saat ini saya menempuh pendidikan di Pondok Pesantren Al-Ittihad. Di sana saya dipercaya menjadi pengurus pondok pada divisi Ta'mirul Qoah serta aktif mengikuti beberapa kegiatan ekstrakurikuler. Selain itu saya senang mencoba hal-hal baru, terutama yang berkaitan dengan teknologi, seni, dan musik.
@@ -481,7 +508,7 @@ x-data="{ aktif: 'web' }">
 
       <blockquote class="reveal d1 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
          <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Paduan Suara</h2>
-        <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 italic">"Sedari SMP saya suka paduan suara dan vocal group dan pernah meraih juara 2 paduan suara dengan membawakan lagu tradisional Gambang Suling dan Mars YPLP saat SMP"</p>
+        <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 italic">"Berpartisipasi dalam kegiatan paduan suara untuk mengembangkan kemampuan vokal, mempelajari cara membaca partitur, menjaga kekompakan tim, serta membangun disiplin dalam latihan dan penampilan."</p>
         <footer class="flex items-center gap-3">
           <div class="pf w-full h-full rounded-3xl"><img src="mypic/paduus.JPG" alt="padus" loading="lazy"></div>
         </footer>
@@ -497,7 +524,7 @@ x-data="{ aktif: 'web' }">
 
       <blockquote class="reveal d3 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
          <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Drum Band</h2>
-        <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 italic">"Saya sangat aktif pada eskul ini terutama di SMP, saya pernah menjadi bell, pianika, bendera, dan snare. Di SMK, saya memiliki keinginan untuk mencoba memainkan trio tom."</p>
+        <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 italic">"Memainkan berbagai peran, mulai dari bell, pianika, snare, hingga pembawa bendera (color guard). Pengalaman ini memperluas wawasan dan meningkatkan kemampuan saya memainkan berbagai instrumen."</p>
         <footer class="flex items-center gap-3">
           <div class="pf w-full h-full rounded-3xl"><img src="mypic/drumb.jpeg" alt="Drumband" loading="lazy"></div>
           
@@ -530,7 +557,7 @@ x-data="{ aktif: 'web' }">
             <span class="text-xs text-zinc-400">Selama Satu Semester</span>
           </div>
             <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Program dari divisi bahasa/ Qismu Lughoh, </h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Pada kelas 10 semester 1, saya menjadi mentor bahasa. Kegiatan ini membantu saya memperdalam kemampuan berbahasa sekaligus melatih keberanian berbicara di depan banyak orang.</p>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Berperan sebagai mentor bahasa dengan membimbing adik kelas atau teman seangkatan dalam mempelajari materi dasar Bahasa Arab dan Bahasa Inggris. Kegiatan ini bertujuan membantu meningkatkan pemahaman, kemampuan berbahasa, serta membangun semangat belajar melalui proses pembelajaran yang aktif dan komunikatif.</p>
         </div>
       </article>
 
@@ -544,7 +571,7 @@ x-data="{ aktif: 'web' }">
             <span class="text-xs text-zinc-400">Selama Satu Tahun</span>
           </div>
             <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Program divisi bagian MPK "Majelis Perwakilan Konsulat"</h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Saya ingin melatih kemampuan berbicara dan kepercayaan diri di depan banyak orang.</p>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Berperan dalam membimbing santri melalui kegiatan pembelajaran materi keagamaan dan tahsin Al-Qur'an. Selain itu, saya turut terlibat dalam penyelenggaraan pemilihan umum OSIS sebagai bagian dari tanggung jawab organisasi.</p>
         </div>
       </article>
 
@@ -559,7 +586,7 @@ x-data="{ aktif: 'web' }">
           </div>
           
           <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Osis / Pengurus pondok divisi Ta'mirul Qoah</h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Memimpin pelaksanaan solat dan mengaji Al=Qur'an, melaksanakan tarbiyatul ahlak (TA), mengurusi ketertiban pelaksanaan ibadah, kesucian dan kebersihan tempat ibadah </p>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Berperan sebagai pengurus Ta'mirul Qo'ah dalam menjaga ketertiban dan kesucian tempat ibadah, mengoordinasikan kegiatan ibadah, membangun kedisiplinan santri, serta memimpin pelaksanaan salat. Turut menyelenggarakan program Tarbiyatul Akhlak (TA) sebagai kegiatan pembinaan adab dan akhlak yang dibimbing oleh ustaz dan ustazah.</p>
           </article>
           
           <article class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
@@ -573,7 +600,7 @@ x-data="{ aktif: 'web' }">
           </div>
           
           <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Menjadi pembimbing kamar / Mursyidatil hujroh</h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Membimbing adik kelas/ teman seangkatan di kamar, mengatur kebersihan, kerapihan, kedisiplinan, pemakaian bahasa dan evaluasi kamar</p>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Bertugas membimbing santri di lingkungan asrama dengan memberikan pendampingan, membangun kedisiplinan, mengevaluasi perkembangan, mengontrol pemakaian bahasa di kamar, serta menciptakan suasana kamar yang tertib, bersih, dan nyaman.</p>
           </article>
     </div>
   </div>
@@ -664,18 +691,15 @@ x-data="{ aktif: 'web' }">
 <footer class="border-t border-zinc-100 dark:border-zinc-900">
   <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
     <p class="text-sm text-zinc-400">© <span id="yr"></span> NcopStar. All rights reserved.</p>
-    <p class="text-xs text-zinc-500">Built with
+    <!-- <p class="text-xs text-zinc-500">Built with
       <a href="https://tailwindcss.com" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">Tailwind CSS</a>
       &amp;
       <a href="https://alpinejs.dev" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">Alpine.js</a>
-    </p>
+    </p> -->
   </div>
 </footer>
 
-<!--  email-->
-  
 
-<!-- email end -->
 
 <script>
 function app() {
