@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" x-data="app()" :class="{'dark':dark}" class="scroll-smooth">
-  <!-- x-data="app()"= punya alpine js ibarat otaknya, app tempat simpen data dn fungsi  -->
+<html lang="en" x-data="app()" class="scroll-smooth">
+  <!--x-data="app()" :class="{'dark':dark}"  x-data="app()"= punya alpine js ibarat otaknya, app tempat simpen data dn fungsi  -->
    <!-- :class = aktifin dark mode secara dinamis, kalo dark=true, aktifin dark mode -->
 <head>
 <meta charset="UTF-8">
@@ -92,40 +92,35 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
  <!-- end -->
 
 
-<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased">
+<body class="bg-zinc-950 text-zinc-100 antialiased">
 
 <!-- ═══ NAV ═══ -->
  <!-- fixed bikin navbarnya ttp di posisi walau di scroll,z-50 biar front in all -->
 <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
       
-  :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
+  :class="sc?'bg-white/90  bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
 <!--max-w-6xl ngebatesin lebar max container  -->
     <a href="#hero" class="font-display font-bold text-xl tracking-tight relative z-10">
-      <span class="text-zinc-100 dark:text-white">Ncop</span><span class="text-accent">Star</span>
+      <span class="text-zinc-100  text-white">Ncop</span><span class="text-accent">Star</span>
     </a>
 
     <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
-      <li><a href="#services" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='services'?'on !text-zinc-900 dark:!text-white':''">Hobi</a></li>
-      <li><a href="#work"     class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Projek</a></li>
-      <li><a href="#about"   class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">Tentang</a></li>
-      <li><a href="#blog"    class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='blog'?'on !text-zinc-900 dark:!text-white':''">Pengalaman</a></li>
-      <li><a href="#contact" class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">Kontak</a></li>
+      <li><a href="#services" class="nl  text-white hover: text-white  hover:text-white transition-colors" :class="s==='services'?'on ! text-white  !text-white':''">Hobi</a></li>
+      <li><a href="#work"     class="nl  text-white hover: text-white  hover:text-white transition-colors" :class="s==='work'?'on ! text-white  !text-white':''">Projek</a></li>
+      <li><a href="#about"   class="nl  text-white hover: text-white  hover:text-white transition-colors" :class="s==='about'?'on ! text-white  !text-white':''">Tentang</a></li>
+      <li><a href="#blog"    class="nl  text-white hover: text-white  hover:text-white transition-colors" :class="s==='blog'?'on ! text-white  !text-white':''">Pengalaman</a></li>
+      <li><a href="#contact" class="nl  text-white hover: text-white  hover:text-white transition-colors" :class="s==='contact'?'on ! text-white  !text-white':''">Kontak</a></li>
       
     </ul>
 
     <div class="flex items-center gap-3">
-      <!-- dark toggle -->
-      <button type="button" aria-label="Toggle theme" @click="dark=!dark" class="w-9 h-9 flex items-center justify-center rounded-full border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors" :aria-label="dark?'Light mode':'Dark mode'" :title="dark?'Light mode':'Dark mode'">
-        <svg x-show="!dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-        <svg x-show="dark"  class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
-      </button>
       <!-- hire me -->
       <a href="#contact" class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
        Hubungi saya <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </a>
       <!-- hamburger -->
-      <button @click="mm=!mm" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800" :aria-expanded="mm" aria-label="Toggle menu">
+      <button @click="mm=!mm" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200  border-zinc-800" :aria-expanded="mm" aria-label="Toggle menu">
         <svg x-show="!mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         <svg x-show="mm"  class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
@@ -136,14 +131,14 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
   <div x-show="mm" x-cloak
     x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
     x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2"
-    class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
+    class="md:hidden  bg-zinc-950 border-t border-zinc-100  border-zinc-900">
     <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
-      <li><a href="#services" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Minat</a></li>
-      <li><a href="#work"     @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Projek</a></li>
-      <li><a href="#about"   @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Tentang</a></li>
-      <li><a href="#blog"    @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Pengalaman</a></li>
-      <li><a href="#contact" @click="mm=false" class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">kontak</a></li>
-      <li class="pt-2 border-t border-zinc-100 dark:border-zinc-900">
+      <li><a href="#services" @click="mm=false" class="block  text-white hover:text-accent transition-colors">Minat</a></li>
+      <li><a href="#work"     @click="mm=false" class="block  text-white hover:text-accent transition-colors">Projek</a></li>
+      <li><a href="#about"   @click="mm=false" class="block  text-white hover:text-accent transition-colors">Tentang</a></li>
+      <li><a href="#blog"    @click="mm=false" class="block  text-white hover:text-accent transition-colors">Pengalaman</a></li>
+      <li><a href="#contact" @click="mm=false" class="block  text-white hover:text-accent transition-colors">kontak</a></li>
+      <li class="pt-2 border-t border-zinc-100  border-zinc-900">
         <a href="#contact" @click="mm=false" class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Hubungi saya -></a>
       </li>
     </ul>
@@ -156,31 +151,27 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 <section id="hero" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
   <!-- min-h-screen = minimal tinggi teh selayareun penuh ,mun d hapus jd narapel ke atas maksa -->
   <div class="absolute top-1/4 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
-  <div class="absolute bottom-1/4 left-0 w-64 h-64 bg-zinc-200/50 dark:bg-zinc-800/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute bottom-1/4 left-0 w-64 h-64 bg-zinc-200/50  bg-zinc-800/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
   <div class="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- biar jd 2 kolom -->
       <div>
-        <h1 class="reveal d1 font-display font-bold text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-zinc-900 dark:text-white mb-6">
+        <h1 class="reveal d1 font-display font-bold text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight  text-white  text-white mb-6">
           Assalamu'alaikum! saya <span class="text-accent">Sofwatunida</span>
         </h1>
-        <p class="reveal d2 text-lg md:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-relaxed max-w-md mb-10">
-          biasa dipanggil <strong class="font-medium text-zinc-700 dark:text-zinc-300">Soffel (SMP) dan Ncop (Pondok).</strong>
+        <p class="reveal d2 text-lg md:text-xl  text-white font-light leading-relaxed max-w-md mb-10">
+          biasa dipanggil <strong class="font-medium text-zinc-500  text-white">Soffel (SMP) dan Ncop (Pondok).</strong>
 Saya menikmati musik, suasana yang tenang, dan percaya bahwa karya sederhana dapat memberikan manfaat bagi orang lain.
         </p>
         <div class="reveal d3 flex flex-wrap gap-4">
-          <a href="#work" class="shimmer inline-flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors text-sm">
+          <a href="#work" class="shimmer inline-flex items-center gap-2 bg-white text-zinc-900 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-300  transition-colors text-sm">
             Lihat Projek
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </a>
-          <a href="#contact" class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Kenali Lebih Dekat</a>
+          <a href="#contact" class="inline-flex items-center gap-2 border border-zinc-300  border-zinc-700  text-white font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50  hover:bg-zinc-900 transition-colors text-sm">Kenali Lebih Dekat</a>
         </div>
-        <div class="reveal d4 flex gap-8 mt-14 pt-8 border-t border-zinc-100 dark:border-zinc-900">
-          <div><p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">17</p><p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Umur</p></div>
-          <div><p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">1 </p><p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Anak ke-</p></div>
-          <div><p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">SMK</p><p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Pendidikan</p></div>
-        </div>
+
       </div>
     
 
@@ -199,56 +190,56 @@ Saya menikmati musik, suasana yang tenang, dan percaya bahwa karya sederhana dap
 </section>
 
 <!-- ═══ SERVICES ═══ -->
-<section id="services" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
+<section id="services" class="py-24 bg-zinc-50  bg-zinc-900/40">
   <div class="max-w-6xl mx-auto px-6">
     <div class="mb-14">
       <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Minat</p>
-      <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Bermain alat musik, menikmati musik, dan bermain game</h2>
+      <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl  text-white  text-white">Bermain alat musik, menikmati musik, dan bermain game</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
 
-      <article class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+      <article class="reveal d1 card-h group bg-zinc-900 rounded-2xl p-8 border border-zinc-100  border-zinc-800 hover:border-accent">
         <!-- reveal=efek muncul pas di scroll -->
          <img src="mypic/ukulele.jpg" alt="ukulele" loading="lazy" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
                
-        <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Ukulele</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Ukulele merupakan alat musik yang paling saya sukai selain karena suaranya yang hangat dan sederhana, melalui ukulele, saya belajar mengiringi lagu sekaligus mengembangkan kreativitas dalam bermusik. </p>
+        <h3 class="font-display font-bold text-xl  text-white  text-white mb-3">Ukulele</h3>
+        <p class="text-sm  text-white leading-relaxe">Ukulele merupakan alat musik yang paling saya sukai selain karena suaranya yang hangat dan sederhana, melalui ukulele, saya belajar mengiringi lagu sekaligus mengembangkan kreativitas dalam bermusik. </p>
       </article>
 
-      <article class="reveal d2 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
+      <article class="reveal d2 card-h group bg-zinc-900  bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
         <img src="mypic/kalimba.jpg" alt="kalimba" loading="lazy" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
         <!-- max-w-6xl meh d tengah gmbar na -->
               
         <h3 class="font-display font-bold text-xl text-white mb-3">Kalimba</h3>
-        <p class="text-sm text-zinc-400 leading-relaxed">Kalimba menghadirkan alunan nada yang lembut dan menenangkan. Memainkannya menjadi cara saya menikmati waktu sekaligus menjaga fokus dan ketenangan.</p>
+        <p class="text-sm  text-white leading-relaxed">Kalimba menghadirkan alunan nada yang lembut dan menenangkan. Memainkannya menjadi cara saya menikmati waktu sekaligus menjaga fokus dan ketenangan.</p>
       </article>
 
-      <article class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+      <article class="reveal d3 card-h group bg-zinc-900 rounded-2xl p-8 border border-zinc-100  border-zinc-800 hover:border-accent">
         <img src="mypic/padus.JPG" alt="Padus" loading="lazy" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
              
-        <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Paduan Suara</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Saya gemar bernyanyi, namun karena kurang percaya diri untuk tampil solo, saya lebih menyukai paduan suara karena melatih kekompakan, fokus, dan keserasian suara.</p>
+        <h3 class="font-display font-bold text-xl  text-white  text-white mb-3">Paduan Suara</h3>
+        <p class="text-sm  text-white leading-relaxed">Saya gemar bernyanyi, namun karena kurang percaya diri untuk tampil solo, saya lebih menyukai paduan suara karena melatih kekompakan, fokus, dan keserasian suara.</p>
       </article>
 
-       <article class="reveal d4 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
+       <article class="reveal d4 card-h group bg-zinc-900  bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
                
         <img src="mypic/rekorder1.jpg" alt="rekorder" loading="eager" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
         <h3 class="font-display font-bold text-xl text-white mb-3">Rekorder</h3>
-        <p class="text-sm text-zinc-400 leading-relaxed">Rekorder menjadi salah satu alat musik yang membantu saya melatih ketelitian, penguasaan nada, serta konsistensi dalam berlatih.</p>
+        <p class="text-sm  text-white leading-relaxed">Rekorder menjadi salah satu alat musik yang membantu saya melatih ketelitian, penguasaan nada, serta konsistensi dalam berlatih.</p>
       </article>
 
-      <article class="reveal d5 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+      <article class="reveal d5 card-h group bg-zinc-900 rounded-2xl p-8 border border-zinc-100  border-zinc-800 hover:border-accent">
         <img src="mypic/bw.jpg" alt="kendang" loading="eager" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
         
-        <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Bermain Game</h3>
-        <p class="text-sm text-zinc-400 leading-relaxed">Bagi saya, bermain game bukan sekadar hiburan, tetapi juga menjadi media untuk melatih strategi, kreativitas, dan kemampuan beradaptasi. Saya menyukai game bergenre pixel maupun strategi, seperti Pixel Worlds, Mobile Legends, dan Clash of Clans.</p>
+        <h3 class="font-display font-bold text-xl  text-white  text-white mb-3">Bermain Game</h3>
+        <p class="text-sm  text-white leading-relaxed">Bagi saya, bermain game bukan sekadar hiburan, tetapi juga menjadi media untuk melatih strategi, kreativitas, dan kemampuan beradaptasi. Saya menyukai game bergenre pixel maupun strategi, seperti Pixel Worlds, Mobile Legends, dan Clash of Clans.</p>
       </article>
 
-     <article class="reveal d6 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
+     <article class="reveal d6 card-h group bg-zinc-900  bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
               
         <img src="mypic/genre.jpeg" alt="musik" loading="eager" class="w-48 h-64 object-cover rounded-2xl mx-auto mb-4">
         <h3 class="font-display font-bold text-xl text-white mb-3">Menikmati Musik</h3>
-        <p class="text-sm text-zinc-400 leading-relaxed">Saya menyukai musik dengan genre Pop Punk hingga Balada, selain sebagai hiburan, musik juga menjadi sumber inspirasi, sarana mengekspresikan diri, dan menemani proses belajar maupun berkarya.</p>
+        <p class="text-sm  text-white leading-relaxed">Saya menyukai musik dengan genre Pop Punk hingga Balada, selain sebagai hiburan, musik juga menjadi sumber inspirasi, sarana mengekspresikan diri, dan menemani proses belajar maupun berkarya.</p>
       </article>
 
     </div>
@@ -263,13 +254,13 @@ Saya menikmati musik, suasana yang tenang, dan percaya bahwa karya sederhana dap
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
       <div>
         <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Projek</p>
-        <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Projek</h2>
+        <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl  text-white  text-white">Projek</h2>
       </div>   
     </div>
 
     <div class = "grid md:grid-cols-2 gap-6">
           <!-- md:row-span-2===mengambil 2 baris grid, sehingga tingginya otomatis menjadi jauh lebih besar daripada card lain -->
-      <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent "
+      <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100  bg-zinc-900 border border-zinc-100  border-zinc-800 hover:border-accent "
 x-data="{ aktif: 'traffic' }">
 
   <div class="pf w-full h-48 md:h-80 ">
@@ -293,29 +284,29 @@ x-data="{ aktif: 'traffic' }">
         <span
           class="text-xs px-3 py-1 rounded-full"
           :class="aktif==='traffic'
-            ? 'text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full'
-            : 'dark:bg-zinc-800 text-zinc-300'">Traffic Light</span>
+            ? 'text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-3 py-1 rounded-full'
+            : ' bg-zinc-800  text-white'">Traffic Light</span>
       </button>
 
       <button @click="aktif='sensor'">
         <span
           class="text-xs px-3 py-1 rounded-full"
           :class="aktif==='sensor'
-            ? 'text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full'
-            : 'dark:bg-zinc-800 text-zinc-300'">Sensor Cahaya</span>
+            ? 'text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-3 py-1 rounded-full'
+            : ' bg-zinc-800  text-white'">Sensor Cahaya</span>
       </button>
 
       <button @click="aktif='running'">
         <span
           class="text-xs px-3 py-1 rounded-full"
           :class="aktif==='running'
-            ? 'text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full'
-            : 'dark:bg-zinc-800 text-zinc-300'">Rancangan Projek</span>
+            ? 'text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-3 py-1 rounded-full'
+            : ' bg-zinc-800  text-white'">Rancangan Projek</span>
       </button>
     </div>
-  <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Proyek Internet of Things yang saya buat untuk mempelajari dasar-dasar penggunaan Arduino Uno, seperti menghubungkan komponen elektronik, membuat rangkaian sederhana, membaca data dari sensor, dan mengendalikan output melalui pemrograman.</p>
-  <p class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">Teknologi yang digunakan:</p>
-  <ul class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">
+  <p class="text-sm text-zinc-500   text-white leading-relaxed">Proyek Internet of Things yang saya buat untuk mempelajari dasar-dasar penggunaan Arduino Uno, seperti menghubungkan komponen elektronik, membuat rangkaian sederhana, membaca data dari sensor, dan mengendalikan output melalui pemrograman.</p>
+  <p class="text-sm text-zinc-300  text-zinc-300 leading-relaxed">Teknologi yang digunakan:</p>
+  <ul class="text-sm text-zinc-500  text-zinc-100 leading-relaxed">
     <li>Arduino Uno</li>
     <li>Arduino IDE</li>
     <li>Tinkercad</li>
@@ -324,7 +315,7 @@ x-data="{ aktif: 'traffic' }">
       </article>
 
       <!--design grafis -->
-       <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent"
+       <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100  bg-zinc-900 border border-zinc-100  border-zinc-800 hover:border-accent"
 x-data="{ aktif: 'mokap' }">
 
   <div class="pf w-full h-64 md:h-80">
@@ -348,38 +339,38 @@ x-data="{ aktif: 'mokap' }">
         <span
           class="text-xs px-3 py-1 rounded-full"
           :class="aktif==='mokap'
-            ? 'text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full'
-            : 'dark:bg-zinc-800 text-zinc-300'">Desain Bungkus Makanan</span>
+            ? 'text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-3 py-1 rounded-full'
+            : ' bg-zinc-800  text-white'">Desain Bungkus Makanan</span>
       </button>
 
       <button @click="aktif='poster'">
         <span
           class="text-xs px-3 py-1 rounded-full"
           :class="aktif==='poster'
-            ? 'text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full'
-            : 'dark:bg-zinc-800 text-zinc-300'">Poster PPDB</span>
+            ? 'text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-3 py-1 rounded-full'
+            : ' bg-zinc-800  text-white'">Poster PPDB</span>
       </button>
 
       <button @click="aktif='up'">
         <span
           class="text-xs px-3 py-1 rounded-full"
           :class="aktif==='up'
-            ? 'text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full'
-            : 'dark:bg-zinc-800 text-zinc-300'">Poster UP</span>
+            ? 'text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-3 py-1 rounded-full'
+            : ' bg-zinc-800  text-white'">Poster UP</span>
       </button>
 
       <button @click="aktif='bau'">
         <span
           class="text-xs px-3 py-1 rounded-full"
           :class="aktif==='bau'
-            ? 'text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full'
-            : 'dark:bg-zinc-800 text-zinc-300'">Poster Tema Bauhaus</span>
+            ? 'text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-3 py-1 rounded-full'
+            : ' bg-zinc-800  text-white'">Poster Tema Bauhaus</span>
       </button>
     </div>
   
-  <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Pembelajaran desain grafis membuat berbagai desain visual seperti poster, banner, dan media promosi digital dengan mengutamakan keseimbangan komposisi, warna, serta komunikasi visual yang efektif. </p>
-   <p class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">Teknologi yang digunakan:</p>
-  <ul class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">
+  <p class="text-sm text-zinc-500   text-white leading-relaxed">Pembelajaran desain grafis membuat berbagai desain visual seperti poster, banner, dan media promosi digital dengan mengutamakan keseimbangan komposisi, warna, serta komunikasi visual yang efektif. </p>
+   <p class="text-sm text-zinc-300  text-zinc-300 leading-relaxed">Teknologi yang digunakan:</p>
+  <ul class="text-sm text-zinc-500  text-zinc-100 leading-relaxed">
     <li>Adobe Illustrator</li>
     <li>Adobe Photoshop</li>
     
@@ -387,7 +378,7 @@ x-data="{ aktif: 'mokap' }">
       </article>
 
       <!-- web-->
-       <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent"
+       <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100  bg-zinc-900 border border-zinc-100  border-zinc-800 hover:border-accent"
 x-data="{ aktif: 'web' }">
 
   <div class="pf w-full">
@@ -408,13 +399,13 @@ x-data="{ aktif: 'web' }">
         <span
           class="text-xs px-3 py-1 rounded-full"
           :class="aktif==='web'
-            ? 'text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full'
-            : 'text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full'">Website Kopi</span>
+            ? 'text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-3 py-1 rounded-full'
+            : 'text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-3 py-1 rounded-full'">Website Kopi</span>
       </button>
     </div>
-   <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Website sederhana bertema kafe kopi yang saya kembangkan sebagai proyek awal dalam mempelajari pengembangan website. Proyek ini dibuat dengan mengikuti referensi dari chanel Web Programming UNPAS sebagai media belajar untuk memahami struktur HTML, styling CSS, dan interaktivitas menggunakan JavaScript.</p>
-     <p class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">Teknologi yang digunakan:</p>
-  <ul class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">
+   <p class="text-sm text-zinc-500   text-white leading-relaxed">Website sederhana bertema kafe kopi yang saya kembangkan sebagai proyek awal dalam mempelajari pengembangan website. Proyek ini dibuat dengan mengikuti referensi dari chanel Web Programming UNPAS sebagai media belajar untuk memahami struktur HTML, styling CSS, dan interaktivitas menggunakan JavaScript.</p>
+     <p class="text-sm text-zinc-300  text-zinc-300 leading-relaxed">Teknologi yang digunakan:</p>
+  <ul class="text-sm text-zinc-500  text-zinc-100 leading-relaxed">
     <li>HTML</li>
     <li>CSS</li>
     <li>JavaScript</li>
@@ -424,7 +415,7 @@ x-data="{ aktif: 'web' }">
 </article>
 
 <!--  -->
-   <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent"
+   <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100  bg-zinc-900 border border-zinc-100  border-zinc-800 hover:border-accent"
 x-data="{ aktif: 'web' }">
 
   <div class="pf w-full h-64 md:h-80">
@@ -444,13 +435,13 @@ x-data="{ aktif: 'web' }">
         <span
           class="text-xs px-3 py-1 rounded-full"
           :class="aktif==='blender'
-            ? 'text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full'
-            : 'text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full'">3D Eskrim</span>
+            ? 'text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-3 py-1 rounded-full'
+            : 'text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-3 py-1 rounded-full'">3D Eskrim</span>
       </button>
     </div>
-   <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">Model 3D sederhana berbentuk es krim yang saya buat sebagai latihan untuk mempelajari dasar-dasar pemodelan tiga dimensi menggunakan Blender. Proyek ini menjadi langkah awal saya dalam mengeksplorasi proses pembuatan objek 3D. </p>
-   <p class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">Teknologi yang digunakan:</p>
-  <ul class="text-sm text-zinc-500 dark:text-zinc-100 leading-relaxed">
+   <p class="text-sm text-zinc-500   text-white leading-relaxed">Model 3D sederhana berbentuk es krim yang saya buat sebagai latihan untuk mempelajari dasar-dasar pemodelan tiga dimensi menggunakan Blender. Proyek ini menjadi langkah awal saya dalam mengeksplorasi proses pembuatan objek 3D. </p>
+   <p class="text-sm text-zinc-300  text-zinc-300 leading-relaxed">Teknologi yang digunakan:</p>
+  <ul class="text-sm text-zinc-500  text-zinc-100 leading-relaxed">
     <li>Blender</li>
   </div>
 </article>
@@ -461,7 +452,7 @@ x-data="{ aktif: 'web' }">
 <!--  -->
 
 <!-- ═══ ABOUT ═══ -->
-<section id="about" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
+<section id="about" class="py-24 bg-zinc-50  bg-zinc-900/40">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid md:grid-cols-2 gap-16 items-center">
 
@@ -473,21 +464,21 @@ x-data="{ aktif: 'web' }">
 
       <div class="order-1 md:order-2">
         <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Tentang Saya</p>
-        <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-6">Sedikit<br>tentang saya</h2>
-        <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Saya Sofwatunida, ditulis tanpa spasi.</p>
-        <p class="reveal d3 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8">
-          Saya merupakan anak pertama dari tiga bersaudara yang lahir di Puncak, Bogor, pada 8 Februari 2009. Saat ini saya menempuh pendidikan di Pondok Pesantren Al-Ittihad. Di sana saya dipercaya menjadi pengurus pondok pada divisi Ta'mirul Qoah serta aktif mengikuti beberapa kegiatan ekstrakurikuler. Selain itu saya senang mencoba hal-hal baru, terutama yang berkaitan dengan teknologi, seni, dan musik.
+        <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl  text-white  text-white leading-tight mb-6">Sedikit<br>tentang saya</h2>
+        <p class="reveal d2 text-zinc-400   text-white leading-relaxed mb-4">Saya Sofwatunida, ditulis tanpa spasi.</p>
+        <p class="reveal d3 text-zinc-400   text-white leading-relaxed mb-8">
+         Saya adalah siswi Pondok Pesantren Al-Ittihad yang memiliki ketertarikan besar pada dunia musik dan seni. Saya menikmati proses belajar berbagai hal baru, termasuk pengembangan web sebagai salah satu keterampilan yang sedang saya pelajari. Selain itu, saya dipercaya menjadi pengurus pondok pada divisi Ta'mirul Qoah yang mengajarkan tanggung jawab dan kerja sama.
         </p>
         <!-- <div class="reveal d4">
-          <p class="text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3">Anggota Ta'mirul Qoah</p>
+          <p class="text-xs font-medium text-zinc-500   text-white uppercase tracking-widest mb-3">Anggota Ta'mirul Qoah</p>
           <div class="flex flex-wrap gap-2" role="list" aria-label="Skills">
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Sofwa</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Salimah</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Farha</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Evina</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Refi</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Rahma</span>
-            <span role="listitem" class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Syafira</span>
+            <span role="listitem" class="stag text-sm bg-white  bg-zinc-800 border border-zinc-200  border-zinc-700 text-zinc-700   text-white px-3.5 py-1.5 rounded-full hover:border-accent">Sofwa</span>
+            <span role="listitem" class="stag text-sm bg-white  bg-zinc-800 border border-zinc-200  border-zinc-700 text-zinc-700   text-white px-3.5 py-1.5 rounded-full hover:border-accent">Salimah</span>
+            <span role="listitem" class="stag text-sm bg-white  bg-zinc-800 border border-zinc-200  border-zinc-700 text-zinc-700   text-white px-3.5 py-1.5 rounded-full hover:border-accent">Farha</span>
+            <span role="listitem" class="stag text-sm bg-white  bg-zinc-800 border border-zinc-200  border-zinc-700 text-zinc-700   text-white px-3.5 py-1.5 rounded-full hover:border-accent">Evina</span>
+            <span role="listitem" class="stag text-sm bg-white  bg-zinc-800 border border-zinc-200  border-zinc-700 text-zinc-700   text-white px-3.5 py-1.5 rounded-full hover:border-accent">Refi</span>
+            <span role="listitem" class="stag text-sm bg-white  bg-zinc-800 border border-zinc-200  border-zinc-700 text-zinc-700   text-white px-3.5 py-1.5 rounded-full hover:border-accent">Rahma</span>
+            <span role="listitem" class="stag text-sm bg-white  bg-zinc-800 border border-zinc-200  border-zinc-700 text-zinc-700   text-white px-3.5 py-1.5 rounded-full hover:border-accent">Syafira</span>
   
           </div>
         </div> -->
@@ -506,25 +497,25 @@ x-data="{ aktif: 'web' }">
 
     <div class="grid md:grid-cols-3 gap-6">
 
-      <blockquote class="reveal d1 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-         <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Paduan Suara</h2>
-        <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 italic">"Berpartisipasi dalam kegiatan paduan suara untuk mengembangkan kemampuan vokal, mempelajari cara membaca partitur, menjaga kekompakan tim, serta membangun disiplin dalam latihan dan penampilan."</p>
+      <blockquote class="reveal d1 bg-zinc-50  bg-zinc-900 rounded-2xl p-7 border border-zinc-100  border-zinc-800">
+         <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl  text-white  text-white">Paduan Suara</h2>
+        <p class="text-zinc-400   text-white text-sm leading-relaxed mb-6 italictext-zinc-600 text-white text-sm leading-relaxed mb-6 italic">"Berpartisipasi dalam kegiatan paduan suara untuk mengembangkan kemampuan vokal, mempelajari cara membaca partitur, menjaga kekompakan tim, serta membangun disiplin dalam latihan dan penampilan."</p>
         <footer class="flex items-center gap-3">
           <div class="pf w-full h-full rounded-3xl"><img src="mypic/paduus.JPG" alt="padus" loading="lazy"></div>
         </footer>
       </blockquote>
 
-     <blockquote class="reveal d2 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-         <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Angklung</h2>
-        <p class="text-zinc-400 text-sm leading-relaxed mb-6 italic">"Saya menyukai angklung sejak TK hingga sekarang. Sama seperti paduan suara, permainan angklung membutuhkan kerja sama tim dan fokus terhadap nada masing-masing."</p>
+     <blockquote class="reveal d2 bg-zinc-50  bg-zinc-900 rounded-2xl p-7 border border-zinc-100  border-zinc-800">
+         <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl  text-white  text-white">Angklung</h2>
+        <p class="text-zinc-400   text-white text-sm leading-relaxed mb-6 italictext-zinc-600 text-white text-sm leading-relaxed mb-6 italic">"Saya menyukai angklung sejak TK hingga sekarang. Sama seperti paduan suara, permainan angklung membutuhkan kerja sama tim dan fokus terhadap nada masing-masing."</p>
         <footer class="flex items-center gap-3">
           <div class="pf w-full h-full rounded-3xl"><img src="mypic/angklung1.jpeg" alt="Angklung" loading="lazy" ></div>
         </footer>
       </blockquote>
 
-      <blockquote class="reveal d3 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-         <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Drum Band</h2>
-        <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 italic">"Memainkan berbagai peran, mulai dari bell, pianika, snare, hingga pembawa bendera (color guard). Pengalaman ini memperluas wawasan dan meningkatkan kemampuan saya memainkan berbagai instrumen."</p>
+      <blockquote class="reveal d3 bg-zinc-50  bg-zinc-900 rounded-2xl p-7 border border-zinc-100  border-zinc-800">
+         <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl  text-white  text-white">Drum Band</h2>
+        <p class="text-zinc-400   text-white text-sm leading-relaxed mb-6 italic">"Memainkan berbagai peran, mulai dari bell, pianika, snare, hingga pembawa bendera (color guard). Pengalaman ini memperluas wawasan dan meningkatkan kemampuan saya memainkan berbagai instrumen."</p>
         <footer class="flex items-center gap-3">
           <div class="pf w-full h-full rounded-3xl"><img src="mypic/drumb.jpeg" alt="Drumband" loading="lazy"></div>
           
@@ -536,74 +527,74 @@ x-data="{ aktif: 'web' }">
 </section>
 
 <!-- ═══ BLOG ═══ -->
-<section id="blog" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
+<section id="blog" class="py-24 bg-zinc-50  bg-zinc-900/40">
   <div class="max-w-6xl mx-auto px-6">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
       <div>
         <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Pengalaman</p>
-        <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Pesantren</h2>
+        <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl  text-white  text-white">Pesantren</h2>
       </div>
     </div>
 
     <div class="grid md:grid-cols-2 gap-6">
 
-      <article class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+      <article class="reveal d1 card-h group bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100  border-zinc-800 hover:border-accent">
         <div class="pf w-full h-44">
           <img src="mypic/mentorbb.JPG" alt="Muhadoroh mentor bahasa" loading="lazy">
         </div>
         <div class="p-6">
          <div class="flex items-center gap-3 mb-3">
-            <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Mentor Bahasa</span>
-            <span class="text-xs text-zinc-400">Selama Satu Semester</span>
+            <span class="text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-2.5 py-1 rounded-full">Mentor Bahasa</span>
+            <span class="text-xs  text-white">Selama Satu Semester</span>
           </div>
-            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Program dari divisi bahasa/ Qismu Lughoh, </h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Berperan sebagai mentor bahasa dengan membimbing adik kelas atau teman seangkatan dalam mempelajari materi dasar Bahasa Arab dan Bahasa Inggris. Kegiatan ini bertujuan membantu meningkatkan pemahaman, kemampuan berbahasa, serta membangun semangat belajar melalui proses pembelajaran yang aktif dan komunikatif.</p>
+            <h3 class="font-display font-bold text-lg  text-white  text-white mb-2 group-hover:text-accent transition-colors">Program dari divisi bahasa/ Qismu Lughoh, </h3>
+          <p class="text-sm text-zinc-500   text-white leading-relaxed mb-4">Berperan sebagai mentor bahasa dengan membimbing adik kelas atau teman seangkatan dalam mempelajari materi dasar Bahasa Arab dan Bahasa Inggris. Kegiatan ini bertujuan membantu meningkatkan pemahaman, kemampuan berbahasa, serta membangun semangat belajar melalui proses pembelajaran yang aktif dan komunikatif.</p>
         </div>
       </article>
 
     
-      <article class="reveal d2 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+      <article class="reveal d2 card-h group bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100  border-zinc-800 hover:border-accent">
         <div class="pf w-full h-44">
           <img src="mypic/mpk.jpg" alt="Mentor MPK" loading="lazy">
         </div>
         <div class="p-6">
           <div class="flex items-center gap-3 mb-3">
-            <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Mentor MPK</span>
-            <span class="text-xs text-zinc-400">Selama Satu Tahun</span>
+            <span class="text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-2.5 py-1 rounded-full">Mentor MPK</span>
+            <span class="text-xs  text-white">Selama Satu Tahun</span>
           </div>
-            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Program divisi bagian MPK "Majelis Perwakilan Konsulat"</h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Berperan dalam membimbing santri melalui kegiatan pembelajaran materi keagamaan dan tahsin Al-Qur'an. Selain itu, saya turut terlibat dalam penyelenggaraan pemilihan umum OSIS sebagai bagian dari tanggung jawab organisasi.</p>
+            <h3 class="font-display font-bold text-lg  text-white  text-white mb-2 group-hover:text-accent transition-colors">Program divisi bagian MPK "Majelis Perwakilan Konsulat"</h3>
+          <p class="text-sm text-zinc-500   text-white leading-relaxed mb-4">Berperan dalam membimbing santri melalui kegiatan pembelajaran materi keagamaan dan tahsin Al-Qur'an. Selain itu, saya turut terlibat dalam penyelenggaraan pemilihan umum OSIS sebagai bagian dari tanggung jawab organisasi.</p>
         </div>
       </article>
 
-      <article class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+      <article class="reveal d3 card-h group bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100  border-zinc-800 hover:border-accent">
         <div class="pf w-full h-44">
           <img src="mypic/hdroh.jpg" alt="Ta'mirul Qoah" loading="lazy">
         </div>
         <div class="p-6">
           <div class="flex items-center gap-3 mb-3">
-            <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Tamirul Qoah</span>
-            <span class="text-xs text-zinc-400">Selama Satu Tahun</span>
+            <span class="text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-2.5 py-1 rounded-full">Tamirul Qoah</span>
+            <span class="text-xs  text-white">Selama Satu Tahun</span>
           </div>
           
-          <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Osis / Pengurus pondok divisi Ta'mirul Qoah</h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Berperan sebagai pengurus Ta'mirul Qo'ah dalam menjaga ketertiban dan kesucian tempat ibadah, mengoordinasikan kegiatan ibadah, membangun kedisiplinan santri, serta memimpin pelaksanaan salat. Turut menyelenggarakan program Tarbiyatul Akhlak (TA) sebagai kegiatan pembinaan adab dan akhlak yang dibimbing oleh ustaz dan ustazah.</p>
+          <h3 class="font-display font-bold text-lg  text-white  text-white mb-2 group-hover:text-accent transition-colors">Osis / Pengurus pondok divisi Ta'mirul Qoah</h3>
+          <p class="text-sm text-zinc-500   text-white leading-relaxed mb-4">Berperan sebagai pengurus Ta'mirul Qo'ah dalam menjaga ketertiban dan kesucian tempat ibadah, mengoordinasikan kegiatan ibadah, membangun kedisiplinan santri, serta memimpin pelaksanaan salat. Turut menyelenggarakan program Tarbiyatul Akhlak (TA) sebagai kegiatan pembinaan adab dan akhlak yang dibimbing oleh ustaz dan ustazah.</p>
          </div>
       </article>  
       
           
-          <article class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+          <article class="reveal d3 card-h group bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100  border-zinc-800 hover:border-accent">
         <div class="pf w-full h-44">
           <img src="mypic/moroom.jpeg" alt="Mentor Of Room" loading="lazy">
         </div>
         <div class="p-6">
           <div class="flex items-center gap-3 mb-3">
-            <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Mentor of Room</span>
-            <span class="text-xs text-zinc-400">Selama Satu Semester</span>
+            <span class="text-xs bg-orange-50  bg-zinc-800 text-accent border border-orange-200  border-zinc-700 px-2.5 py-1 rounded-full">Mentor of Room</span>
+            <span class="text-xs  text-white">Selama Satu Semester</span>
           </div>
           
-          <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Menjadi pembimbing kamar / Mursyidatil hujroh</h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Bertugas membimbing santri di lingkungan asrama dengan memberikan pendampingan, membangun kedisiplinan, mengevaluasi perkembangan, mengontrol pemakaian bahasa di kamar, serta menciptakan suasana kamar yang tertib, bersih, dan nyaman.</p>
+          <h3 class="font-display font-bold text-lg  text-white  text-white mb-2 group-hover:text-accent transition-colors">Menjadi pembimbing kamar / Mursyidatil hujroh</h3>
+          <p class="text-sm text-zinc-500   text-white leading-relaxed mb-4">Bertugas membimbing santri di lingkungan asrama dengan memberikan pendampingan, membangun kedisiplinan, mengevaluasi perkembangan, mengontrol pemakaian bahasa di kamar, serta menciptakan suasana kamar yang tertib, bersih, dan nyaman.</p>
           </article>
     </div>
   </div>
@@ -612,7 +603,7 @@ x-data="{ aktif: 'web' }">
 <!-- ═══ CONTACT ═══ -->
 <section id="contact" class="py-24">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-16 relative overflow-hidden">
+    <div class="bg-zinc-900  bg-zinc-800 rounded-3xl p-10 md:p-16 relative overflow-hidden">
       <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
       <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
 
@@ -622,35 +613,35 @@ x-data="{ aktif: 'web' }">
         <div>
           <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Kenali lebih dekat dengan</p>
           <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-white leading-tight mb-5">"Mengenal<br>lebih jauh"</h2>
-          <p class="reveal d2 text-zinc-400 leading-relaxed mb-8">Jika ada hal yang ingin didiskusikan, jangan ragu untuk menghubungi saya dengan 'klik' salah satu  platform di bawah ini.</p>
+          <p class="reveal d2  text-white leading-relaxed mb-8">Jika ada hal yang ingin didiskusikan, jangan ragu untuk menghubungi saya dengan 'klik' salah satu  platform di bawah ini.</p>
 
           <div class="reveal d3 flex flex-col gap-4">
   
       
             
             <!-- langsung ke email -->
-             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sofwatunida.arahma@gmail.com" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
+             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sofwatunida.arahma@gmail.com" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3  text-white hover:text-white transition-colors">
                 <span class="w-9 h-9 flex items-center justify-center bg-zinc-800 rounded-lg group-hover:bg-accent/20 transition-colors shrink-0">
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 </span>
                     <span class="text-sm">sofwatunida.arahma@gmail.com</span>
               </a>
              <!-- end -->
-            <a href="https://www.linkedin.com/in/sofwatunida" rel="noopener noreferrer" target="_blank" class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
+            <a href="https://www.linkedin.com/in/sofwatunida" rel="noopener noreferrer" target="_blank" class="group flex items-center gap-3  text-white hover:text-white transition-colors">
               <span class="w-9 h-9 flex items-center justify-center bg-zinc-800 rounded-lg group-hover:bg-accent/20 transition-colors shrink-0">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 <!-- viewBox="0 0 24 24" kepotong kl d ubah2 -->
               </span>
               <span class="text-sm">linkedin.com/in/sofwatunida</span>
             </a>
-            <a href="https://github.com/Sofwatunida" rel="noopener noreferrer" target="_blank" class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
+            <a href="https://github.com/Sofwatunida" rel="noopener noreferrer" target="_blank" class="group flex items-center gap-3  text-white hover:text-white transition-colors">
               <span class="w-9 h-9 flex items-center justify-center bg-zinc-800 rounded-lg group-hover:bg-accent/20 transition-colors shrink-0">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
               </span>
               <span class="text-sm">github.com/Sofwatunida</span>
             </a>
 
-            <a href="https://www.instagram.com/sfwtnd_" rel="noopener noreferrer" target="_blank" class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
+            <a href="https://www.instagram.com/sfwtnd_" rel="noopener noreferrer" target="_blank" class="group flex items-center gap-3  text-white hover:text-white transition-colors">
               <!-- gap jdi ngejauhin de logo -->
               <span class="w-9 h-9 flex items-center justify-center bg-zinc-800 rounded-lg group-hover:bg-accent/20 transition-colors shrink-0">
                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -667,18 +658,18 @@ x-data="{ aktif: 'web' }">
   <div class="flex flex-col gap-4">
     <div class="grid sm:grid-cols-2 gap-4">
       <div>
-        <label class="block text-xs font-medium text-zinc-400 mb-1.5">Nama <span>*</span></label>
+        <label class="block text-xs font-medium  text-white mb-1.5">Nama <span>*</span></label>
         <input type="text" id="Nama" placeholder="Nama kamu" required
           class="w-full bg-zinc-800 border-zinc-700 text-white text-sm rounded-xl px-4 py-3">
       </div>
       <div>
-        <label class="block text-xs font-medium text-zinc-400 mb-1.5">Email <span>*</span></label>
+        <label class="block text-xs font-medium  text-white mb-1.5">Email <span>*</span></label>
         <input type="email" id="Email" placeholder="emailkamu@gmail.com" required
           class="w-full bg-zinc-800 border-zinc-700 text-white text-sm rounded-xl px-4 py-3">
       </div>
     </div>
     <div>
-      <label class="block text-xs font-medium text-zinc-400 mb-1.5">Pesan/kritik/saran <span>*</span></label>
+      <label class="block text-xs font-medium  text-white mb-1.5">Pesan/kritik/saran <span>*</span></label>
       <textarea id="Pesan" rows="4" placeholder="Tulis pesan kamu..." required
         class="w-full bg-zinc-800 border-zinc-700 text-white text-sm rounded-xl px-4 py-3 resize-none"></textarea>
     </div>
@@ -691,9 +682,9 @@ x-data="{ aktif: 'web' }">
 <!-- .. -->
     
 
-<footer class="border-t border-zinc-100 dark:border-zinc-900">
+<footer class="border-t border-zinc-100  border-zinc-900">
   <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <p class="text-sm text-zinc-400">© <span id="yr"></span> NcopStar. All rights reserved.</p>
+    <p class="text-sm  text-white">© <span id="yr"></span> NcopStar. All rights reserved.</p>
     <!-- <p class="text-xs text-zinc-500">Built with
       <a href="https://tailwindcss.com" rel="noopener noreferrer" target="_blank" class="hover:text-accent transition-colors">Tailwind CSS</a>
       &amp;
@@ -707,16 +698,12 @@ x-data="{ aktif: 'web' }">
 <script>
 function app() {
   return {
-    dark: false,
     mm: false,
     sc: false,
     s: 'hero',
 
     init() {
-      // dark mode
-      this.dark = localStorage.getItem('theme') === 'dark' ||
-        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-      this.$watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
+      
 
       // scroll
       window.addEventListener('scroll', () => {
